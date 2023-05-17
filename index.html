@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesto</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./scripts/script.js" defer></script>
   </head>
   <body class="page">
     <header class="header">
@@ -29,59 +29,59 @@
           <img src="./images/sea.jpg" class="element__image" alt="Море" />
           <div class="element__description">
             <h2 class="element__title">Море</h2>
-            <img src="./images/Vector.svg" class="element__like" alt="Нравится" />
+            <button type="button" id="" class="button-like"></button>
           </div>
         </li>
         <li class="element">
           <img src="./images/city.jpg" class="element__image" alt="Городской пейзаж" />
           <div class="element__description">
             <h2 class="element__title">Городской пейзаж</h2>
-            <img src="./images/Vector.svg" class="element__like" alt="Нравится" />
+            <button type="button" id="" class="button-like"></button>
           </div>
         </li>
         <li class="element">
           <img src="./images/forest.jpg" class="element__image" alt="Лес" />
           <div class="element__description">
             <h2 class="element__title">Лес</h2>
-            <img src="./images/Vector.svg" class="element__like" alt="Нравится" />
+            <button type="button" id="" class="button-like"></button>
           </div>
         </li>
         <li class="element">
           <img src="./images/wilderness.jpg" class="element__image" alt="Пустыня" />
           <div class="element__description">
             <h2 class="element__title">Пустыня</h2>
-            <img src="./images/Vector.svg" class="element__like" alt="Нравится" />
+            <button type="button" id="" class="button-like"></button>
           </div>
         </li>
         <li class="element">
           <img src="./images/mountains.jpg" class="element__image" alt="Горы" />
           <div class="element__description">
             <h2 class="element__title">Горы</h2>
-            <img src="./images/Vector.svg" class="element__like" alt="Нравится" />
+            <button type="button" id="" class="button-like"></button>
           </div>
         </li>
         <li class="element">
           <img src="./images/abstraction.jpg" class="element__image" alt="Абстракция" />
           <div class="element__description">
             <h2 class="element__title">Абстракция</h2>
-            <img src="./images/Vector.svg" class="element__like" alt="Нравится" />
+            <button type="button" id="" class="button-like"></button>
           </div>
         </li>
       </ul>
-      <div class="popup popup_opened">
-        <div class="popup__container">
-          <form class="popup__form">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <input id="name-input" type="text" class="popup__input" />
-            <input id="name-input" type="text" class="popup__input" />
-            <button type="submit" class="popup__button">Сохранить</button>
-          </form>
-          <button id="close-popup-button" class="popup__close-button"></button>
-        </div>
-      </div>
     </main>
     <footer class="footer">
       <p class="footer__info">&#169; 2023 Mesto Russia</p>
     </footer>
+    <div class="popup">
+      <div class="popup__container">
+        <form class="popup__form">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input id="title-input" type="text" class="popup__input" />
+          <input id="subtitle-input" type="text" class="popup__input" />
+          <button type="submit" class="popup__button">Сохранить</button>
+        </form>
+        <button class="popup__close-button"></button>
+      </div>
+    </div>
   </body>
 </html>
