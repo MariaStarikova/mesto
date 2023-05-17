@@ -8,4 +8,4 @@
 
 **GitPages**
 
-- [Ссылка на GitPages]()
+- [Ссылка на GitPages](https://mariastarikova.github.io/mesto/index.html)
