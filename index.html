@@ -13,74 +13,90 @@
       <img src="./images/logo.svg" class="header__logo" alt="Логотип" />
     </header>
     <main>
-      <div class="profile">
+      <section class="profile">
         <img src="./images/avatar.svg" class="profile__avatar" alt="Фото профиля" />
         <div class="profile__info">
           <div class="profile__name">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button type="button" class="edit-button"></button>
+            <button type="button" class="profile__edit-button" aria-label="Редактировать"></button>
           </div>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button type="button" class="add-button"></button>
-      </div>
-      <ul class="elements">
-        <li class="element">
-          <img src="./images/sea.jpg" class="element__image" alt="Море" />
-          <div class="element__description">
-            <h2 class="element__title">Море</h2>
-            <button type="button" id="" class="button-like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/women.jpg" class="element__image" alt="Девушка" />
-          <div class="element__description">
-            <h2 class="element__title">Девушка</h2>
-            <button type="button" id="" class="button-like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/flower.jpg" class="element__image" alt="Цветок" />
-          <div class="element__description">
-            <h2 class="element__title">Цветок</h2>
-            <button type="button" id="" class="button-like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/frog.jpg" class="element__image" alt="Лягушка" />
-          <div class="element__description">
-            <h2 class="element__title">Лягушка</h2>
-            <button type="button" id="" class="button-like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/nature.jpg" class="element__image" alt="Природа" />
-          <div class="element__description">
-            <h2 class="element__title">Природа</h2>
-            <button type="button" id="" class="button-like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/wilderness.jpg" class="element__image" alt="Пустыня" />
-          <div class="element__description">
-            <h2 class="element__title">Пустыня</h2>
-            <button type="button" id="" class="button-like"></button>
-          </div>
-        </li>
-      </ul>
+        <button type="button" class="profile__add-button" aria-label="Добавить контент"></button>
+      </section>
+      <section class="elements">
+        <ul class="elements__list">
+          <li class="element">
+            <img src="./images/sea.jpg" class="element__image" alt="Море" />
+            <div class="element__description">
+              <h2 class="element__title">Море</h2>
+              <button type="button" class="element__button-like"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img src="./images/women.jpg" class="element__image" alt="Девушка" />
+            <div class="element__description">
+              <h2 class="element__title">Девушка</h2>
+              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img src="./images/flower.jpg" class="element__image" alt="Цветок" />
+            <div class="element__description">
+              <h2 class="element__title">Цветок</h2>
+              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img src="./images/frog.jpg" class="element__image" alt="Лягушка" />
+            <div class="element__description">
+              <h2 class="element__title">Лягушка</h2>
+              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img src="./images/nature.jpg" class="element__image" alt="Природа" />
+            <div class="element__description">
+              <h2 class="element__title">Природа</h2>
+              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
+            </div>
+          </li>
+          <li class="element">
+            <img src="./images/wilderness.jpg" class="element__image" alt="Пустыня" />
+            <div class="element__description">
+              <h2 class="element__title">Пустыня</h2>
+              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
     <footer class="footer">
       <p class="footer__info">&#169; 2023 Mesto Russia</p>
     </footer>
     <div class="popup">
       <div class="popup__container">
-        <form class="popup__form">
+        <form class="popup__form" name="popup-form">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input id="title-input" type="text" class="popup__input" />
-          <input id="subtitle-input" type="text" class="popup__input" />
-          <button type="submit" class="popup__button">Сохранить</button>
+          <input
+            id="title-input"
+            name="input-title"
+            type="text"
+            class="popup__input"
+            placeholder="Имя"
+            required
+          />
+          <input
+            id="subtitle-input"
+            name="input-subtitle"
+            type="text"
+            class="popup__input"
+            placeholder="Описание"
+            required
+          />
+          <button type="submit" class="popup__button" aria-label="Сохранить">Сохранить</button>
         </form>
-        <button class="popup__close-button"></button>
+        <button type="button" class="popup__close-button" aria-label="Закрыть"></button>
       </div>
     </div>
   </body>
