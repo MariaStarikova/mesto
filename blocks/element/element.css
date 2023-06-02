@@ -4,11 +4,13 @@
   max-width: 282px;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {
   .element {
     justify-self: center;
     align-self: center;
+    width: 282px;
   }
 }
