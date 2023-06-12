@@ -25,99 +25,55 @@
         <button type="submit" class="profile__add-button" aria-label="Добавить контент"></button>
       </section>
       <section class="elements">
-        <ul class="elements__list">
-          <!-- <li class="element">
-            <img src="./images/sea.jpg" class="element__image" alt="Море" />
-            <div class="element__description">
-              <h2 class="element__title">Море</h2>
-              <button type="button" class="element__button-like"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img src="./images/women.jpg" class="element__image" alt="Девушка" />
-            <div class="element__description">
-              <h2 class="element__title">Девушка</h2>
-              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img src="./images/flower.jpg" class="element__image" alt="Цветок" />
-            <div class="element__description">
-              <h2 class="element__title">Цветок</h2>
-              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img src="./images/frog.jpg" class="element__image" alt="Лягушка" />
-            <div class="element__description">
-              <h2 class="element__title">Лягушка</h2>
-              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img src="./images/nature.jpg" class="element__image" alt="Природа" />
-            <div class="element__description">
-              <h2 class="element__title">Природа</h2>
-              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
-            </div>
-          </li>
-          <li class="element">
-            <button type="button" class="element__button-remove" aria-label="Удалить"></button>
-            <img src="./images/wilderness.jpg" class="element__image" alt="Пустыня" />
-            <div class="element__description">
-              <h2 class="element__title">Пустыня</h2>
-              <button type="button" class="element__button-like" aria-label="Нравиться"></button>
-            </div>
-          </li> -->
-        </ul>
+        <ul class="elements__list"></ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__info">&#169; 2023 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup_edit-profile">
       <div class="popup__container">
         <form class="popup__form" name="popup-form">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input
-            id="title-input"
             name="input-title"
             type="text"
-            class="popup__input"
+            class="popup__input popup__input_title"
             placeholder="Имя"
             required
           />
           <input
-            id="subtitle-input"
             name="input-subtitle"
             type="text"
-            class="popup__input"
+            class="popup__input popup__input_subtitle"
             placeholder="Описание"
             required
           />
           <button type="submit" class="popup__button" aria-label="Сохранить">Сохранить</button>
         </form>
-        <button type="button" class="popup__close-button" aria-label="Закрыть"></button>
+        <button
+          type="button"
+          class="popup__close-button popup__close-button_edit"
+          aria-label="Закрыть"
+        ></button>
       </div>
     </div>
 
-    <div class="popup" id="popup">
+    <div class="popup popup_add-card">
       <div class="popup__container">
-        <form class="popup__form" name="popup-form" id="popup__form">
+        <form class="popup__form popup__form_add-card" name="popup-form">
           <h2 class="popup__title">Новое место</h2>
           <input
-            id="mesto-input"
             name="input-title"
             type="text"
-            class="popup__input"
+            class="popup__input popup__input_mesto"
             placeholder="Название"
             required
           />
           <input
-            id="image-input"
             name="input-subtitle"
             type="text"
-            class="popup__input"
+            class="popup__input popup__input_image"
             placeholder="Ссылка на картинку"
             required
           />
@@ -125,16 +81,15 @@
         </form>
         <button
           type="button"
-          class="popup__close-button"
+          class="popup__close-button popup__close-button_add"
           aria-label="Закрыть"
-          id="popup__close-button"
         ></button>
       </div>
     </div>
 
     <div class="popup popup_image" id="popup-view">
       <div class="popup__container popup__container_image">
-        <button type="button" class="popup__close-button" id="popup-view__close-button"></button>
+        <button type="button" class="popup__close-button popup__close-button_view"></button>
         <img class="popup__image" alt="Увеличенное изображение" />
         <h2 class="popup__title-image">Заголовок изображения</h2>
       </div>
