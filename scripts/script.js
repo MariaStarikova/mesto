@@ -19,6 +19,12 @@ openPopupBtn.addEventListener('click', function () {
   titleInput.value = profileTitle.textContent;
   subtitleInput.value = profileSubtitle.textContent;
   openPopup(editPopup);
+
+  const formElement = document.querySelector('.popup__form');
+  const inputList = Array.from(formElement.querySelectorAll('.popup__input'));
+  const submitButton = formElement.querySelector('.popup__button');
+
+  toggleButtonState(inputList, submitButton, settings);
 });
 
 closePopupBtn.addEventListener('click', function () {
@@ -146,4 +152,23 @@ const popupViewCloseBtn = document.querySelector('.popup__close-button_view');
 
 popupViewCloseBtn.addEventListener('click', function () {
   closePopup(popupView);
+});
+
+const popups = document.querySelectorAll('.popup');
+
+popups.forEach(popup => {
+  popup.addEventListener('click', event => {
+    if (event.target === event.currentTarget) {
+      closePopup(popup);
+    }
+  });
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
+  }
 });
