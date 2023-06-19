@@ -62,8 +62,8 @@ const settings = {
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_error',
-  errorClass: 'popup__input_error_active'
+  inputErrorClass: 'popup__input-error',
+  errorClass: 'popup__input-error_active'
 };
 
 enableValidation(settings);
