@@ -33,3 +33,7 @@ export const settings = {
   inputErrorClass: 'popup__input_underline',
   errorClass: 'popup__input-error_active'
 };
+
+function lalala {
+  console.log('lalala');
+}
