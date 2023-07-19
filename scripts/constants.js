@@ -36,4 +36,5 @@ export const settings = {
 
 function foo {
   console.log(settings);
+  console.log('final');
 }
