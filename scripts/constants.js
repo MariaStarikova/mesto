@@ -34,6 +34,7 @@ export const settings = {
   errorClass: 'popup__input-error_active'
 };
 
-function lalala {
-  console.log('lalala');
+function foo {
+  console.log(settings);
+  console.log('final');
 }
