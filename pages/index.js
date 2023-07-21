@@ -52,7 +52,6 @@ editPopup.setEventListeners();
 addPopup.setEventListeners();
 viewPopup.setEventListeners();
 
-const editForm = document.querySelector('.popup__form');
 export const editFormValidator = new FormValidation(
   settings,
   document.querySelector('.popup__form')
