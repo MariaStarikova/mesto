@@ -1,10 +1,9 @@
-import { openPopupView } from './index.js';
-
 export class Card {
-  constructor(data, templateSelector) {
+  constructor(data, templateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -39,9 +38,9 @@ export class Card {
     this._element = null;
   }
 
-  _handleOpenPopup() {
-    openPopupView({ name: this._name, link: this._link });
-  }
+  _handleOpenPopup = () => {
+    this._handleCardClick({ name: this._name, link: this._link });
+  };
 
   _setEventListeners() {
     this._likeButton.addEventListener('click', () => {

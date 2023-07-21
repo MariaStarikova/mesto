@@ -33,8 +33,3 @@ export const settings = {
   inputErrorClass: 'popup__input_underline',
   errorClass: 'popup__input-error_active'
 };
-
-function foo {
-  console.log(settings);
-  console.log('final');
-}
