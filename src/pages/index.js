@@ -7,6 +7,14 @@ import { PopupWithForm } from '../components/PopupWithForm.js';
 import { PopupWithImage } from '../components/PopupWithImage.js';
 import { UserInfo } from '../components/UserInfo.js';
 import { Section } from '../components/Section.js';
+import logo from '../images/logo.svg';
+import avatar from '../images/avatar.svg';
+
+const headerLogo = document.querySelector('.header__logo');
+const profileAvatar = document.querySelector('.profile__avatar');
+
+headerLogo.setAttribute('src', logo);
+profileAvatar.setAttribute('src', avatar);
 
 const titleInput = document.querySelector('.popup__input_title');
 const subtitleInput = document.querySelector('.popup__input_subtitle');

@@ -26,40 +26,60 @@ module.exports = {
         use: 'babel-loader',
         exclude: '/node_modules/'
       },
+      // {
+      //   test: /\.css$/,
+      //   use: ['style-loader']
+      // },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     MiniCssExtractPlugin.loader,
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         importLoaders: 1
+      //       }
+      //     },
+      //     'postcss-loader'
+      //   ]
+      // },
       {
-        test: /\. (png|svg|jpg|jpeg|gif)$/,
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: ''
+            }
+          },
+          'css-loader',
+          'postcss-loader'
+        ]
+      },
+      // {
+      //   test: /\.svg$/,
+      //   use: 'file-loader'
+      // },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name].[hash][ext]'
+        }
+      },
+      {
+        test: /\.svg$/,
         type: 'asset/resource',
         generator: {
           filename: 'images/[name].[hash][ext]'
         }
       },
       {
-        test: /\.svg$/,
-        use: 'file-loader'
-      },
-      {
-        test: /\. (woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name].[hash][ext]'
+          filename: 'images/[name].[hash][ext]'
         }
-      },
-      //   {
-      //     test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-      //     type: 'asset/resource'
-      //   },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1
-            }
-          },
-          'postcss-loader'
-        ]
       }
     ]
   },
