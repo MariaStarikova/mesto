@@ -26,23 +26,6 @@ module.exports = {
         use: 'babel-loader',
         exclude: '/node_modules/'
       },
-      // {
-      //   test: /\.css$/,
-      //   use: ['style-loader']
-      // },
-      // {
-      //   test: /\.css$/,
-      //   use: [
-      //     MiniCssExtractPlugin.loader,
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         importLoaders: 1
-      //       }
-      //     },
-      //     'postcss-loader'
-      //   ]
-      // },
       {
         test: /\.css$/,
         use: [
@@ -56,10 +39,6 @@ module.exports = {
           'postcss-loader'
         ]
       },
-      // {
-      //   test: /\.svg$/,
-      //   use: 'file-loader'
-      // },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
