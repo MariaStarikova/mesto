@@ -22,6 +22,7 @@ export class FormValidation {
       this._buttonElement.disabled = false;
     }
   }
+
   _setEventListeners() {
     this.toggleButtonState();
 
