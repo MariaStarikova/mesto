@@ -1,6 +1,6 @@
 import '../pages/index.css';
 import { Card } from '../components/card.js';
-import { initialCards, settings } from '../components/constants.js';
+import { initialCards, settings } from '../utils/constants';
 import { FormValidation } from '../components/FormValidator.js';
 import { Popup } from '../components/Popup.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
@@ -76,7 +76,7 @@ function handleCardClick(data) {
   popupWithImage.open(data);
 }
 
-function createCard(name, link, template, handleCardClick) {
+function createCard(name, link, template) {
   const card = new Card({ name, link }, template, handleCardClick);
   return card.generateCard();
 }
@@ -85,7 +85,7 @@ const cardsSection = new Section(
   {
     items: initialCards,
     renderer: item => {
-      const cardElement = createCard(item.name, item.link, '#template-element', handleCardClick);
+      const cardElement = createCard(item.name, item.link, '#template-element');
       cardsSection.addItem(cardElement);
     }
   },
