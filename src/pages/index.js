@@ -1,5 +1,5 @@
 import '../pages/index.css';
-import { Card } from '../components/card.js';
+import { Card } from '../components/Card.js';
 import { initialCards, settings } from '../utils/constants';
 import { FormValidation } from '../components/FormValidator.js';
 import { Popup } from '../components/Popup.js';
@@ -18,12 +18,9 @@ profileAvatar.setAttribute('src', avatar);
 
 const titleInput = document.querySelector('.popup__input_title');
 const subtitleInput = document.querySelector('.popup__input_subtitle');
-const templateList = document.querySelector('.elements__list');
-const mestoInput = document.querySelector('.popup__input_mesto');
-const imageInput = document.querySelector('.popup__input_image');
 const openEditPopupBtn = document.querySelector('.profile__edit-button');
 const openAddPopupBtn = document.querySelector('.profile__add-button');
-const viewPopup = new Popup('.popup_image');
+const popupWithImage = new PopupWithImage('.popup_image');
 const userInfo = new UserInfo({
   nameSelector: '.profile__title',
   infoSelector: '.profile__subtitle'
@@ -47,37 +44,33 @@ const editPopup = new PopupWithForm('.popup_edit-profile', formData => {
   userInfo.setUserInfo({ name: formData['input-title'], info: formData['input-description'] });
 });
 
-const addPopup = new PopupWithForm('.popup_add-card', () => {
+const addPopup = new PopupWithForm('.popup_add-card', formData => {
   const newCardData = {
-    name: mestoInput.value,
-    link: imageInput.value
+    name: formData['input-name'],
+    link: formData['input-link']
   };
 
   const newCard = createCard(newCardData.name, newCardData.link, '#template-element');
-  templateList.prepend(newCard);
+  cardsSection.addItem(newCard);
 });
 
 editPopup.setEventListeners();
 addPopup.setEventListeners();
-viewPopup.setEventListeners();
+popupWithImage.setEventListeners();
 
 const editForm = document.querySelector('.popup__form');
-export const editFormValidator = new FormValidation(
-  settings,
-  document.querySelector('.popup__form')
-);
+export const editFormValidator = new FormValidation(settings, editForm);
 const addFormValidator = new FormValidation(
   settings,
   document.querySelector('.popup__form_add-card')
 );
 
 function handleCardClick(data) {
-  const popupWithImage = new PopupWithImage('.popup_image');
   popupWithImage.open(data);
 }
 
-function createCard(name, link, template) {
-  const card = new Card({ name, link }, template, handleCardClick);
+function createCard(name, link) {
+  const card = new Card({ name, link }, '#template-element', handleCardClick);
   return card.generateCard();
 }
 
@@ -85,8 +78,8 @@ const cardsSection = new Section(
   {
     items: initialCards,
     renderer: item => {
-      const cardElement = createCard(item.name, item.link, '#template-element');
-      cardsSection.addItem(cardElement);
+      const newCard = createCard(item.name, item.link);
+      cardsSection.addItem(newCard);
     }
   },
   '.elements__list'
