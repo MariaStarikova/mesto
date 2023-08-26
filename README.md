@@ -10,4 +10,4 @@
 
 **GitPages**
 
-- [Ссылка на GitPages](https://mariastarikova.github.io/mesto/)
+- [Ссылка на GitPages](https://mariastarikova.github.io/mesto)
