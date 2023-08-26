@@ -3,7 +3,7 @@ import { Popup } from './Popup.js';
 export class PopupRemove extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
-    this._confirmButton = this._popupElement.querySelector('.popup__buton_remove');
+    this._confirmButton = this._popupElement.querySelector('.popup__button_remove');
   }
 
   open(card) {
