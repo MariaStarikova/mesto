@@ -7,11 +7,17 @@ export class Section {
 
   renderItems() {
     this._items.forEach(item => {
-      this._renderer(item);
+      const newCard = this._renderer(item, item.likes.length, item._id);
+      this._container.append(newCard);
     });
   }
 
   addItem(element) {
     this._container.prepend(element);
+  }
+
+  addCard(cardElement) {
+    const card = this._renderer(cardElement, cardElement.likes.length);
+    this._container.prepend(card);
   }
 }
