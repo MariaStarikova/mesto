@@ -11,6 +11,7 @@ export class Card {
     this._handleDelete = handleDelete;
     this._currentUserId = currentUserId;
     this._ownerId = data.owner._id;
+    this.cardId = data.cardId;
   }
 
   _getTemplate() {
@@ -83,6 +84,10 @@ export class Card {
   _handleOpenPopup = () => {
     this._handleCardClick({ name: this._name, link: this._link });
   };
+
+  getId() {
+    return this.cardId;
+  }
 
   _setEventListeners() {
     this._likeButton.addEventListener('click', () => {

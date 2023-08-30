@@ -144,8 +144,9 @@ function handleLike(cardId, action) {
   }
 }
 
-function handleDelete(cardId) {
-  popupRemove.setDeleteInfo(api, cardId, this.getElement());
+function handleDelete(cardInstance) {
+  const cardId = cardInstance.getId();
+  popupRemove.setDeleteInfo(api, cardId, cardInstance.getElement());
   popupRemove.open();
 }
 
@@ -179,7 +180,7 @@ function createCard(cardData, userId) {
     '#template-element',
     handleCardClick,
     handleLike,
-    handleDelete,
+    () => handleDelete(card),
     userId
   );
   return card.generateCard();
@@ -189,43 +190,29 @@ const cardsSection = new Section(
   {
     items: [],
     renderer: item => {
-      const newCard = createCard(item);
+      const newCard = createCard(item, userId);
       return newCard;
     }
   },
   '.elements__list'
 );
 
-cardsSection.renderItems();
-
 editFormValidator.enableValidation();
 addFormValidator.enableValidation();
 updateAvatarFormValidator.enableValidation();
 
-api
-  .getInfoUser()
-  .then(res => {
-    console.log(res);
+Promise.all([api.getInfoUser(), api.getInitialCards()])
+  .then(([userData, cardsData]) => {
     userInfo.setUserInfo({
-      name: res.name,
-      about: res.about
+      name: userData.name,
+      about: userData.about
     });
-    userId = res._id;
+    userId = userData._id;
 
-    userInfo.setUserAvatar(res.avatar);
-  })
-  .catch(err => {
-    console.error(`Ошибка: ${err}`);
-  });
-
-api
-  .getInitialCards()
-  .then(cardsData => {
+    userInfo.setUserAvatar(userData.avatar);
     console.log(cardsData);
-    cardsData.forEach(item => {
-      const newCard = createCard(item, userId);
-      cardsSection.addItem(newCard);
-    });
+
+    cardsSection.renderItems(cardsData);
   })
   .catch(err => {
     console.error(`Ошибка: ${err}`);
