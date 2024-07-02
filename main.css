@@ -466,6 +466,10 @@ template {
   }
 }
 
+.profile__container {
+  position: relative;
+}
+
 .profile__avatar {
   border-radius: 50%;
   width: 120px;
@@ -968,10 +972,6 @@ template {
 .profile__button-avatar:hover {
   opacity: 0.8;
   background-color: rgba(0, 0, 0, 0.9);
-}
-
-.profile__container {
-  position: relative;
 }
 
 .element__likes {
