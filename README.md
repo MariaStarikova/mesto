@@ -1,8 +1,18 @@
-# Проекты 4, 5, 6, 7, 8, 9: "Место"
+# Проект: Место - учебная проектная работа 
 
-Проект посвящен красивым и интересным местам России. В функционал проекта входит добавление новой карточки, изменение имени и описания пользователя, а также изменение изображения аватара, проверка корректности введенных данных, при нажатии на картинку вы увидите окно с полным изображением.
+В функционал проекта входит добавление новой карточки, изменение имени и описания пользователя, а также изменение изображения аватара, проверка корректности введенных данных, при нажатии на картинку вы увидите окно с полным изображением.
 
-Проект, написан с использованием технологий: **HTML, CSS, JavaScript, flex-box, Grid Layout, БЭМ, адаптивная верстка, Es6 Modules, ООП, webpack**.
+### Стек технологий:
+
+<div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="html5" alt="html5" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="css" alt="css" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="javascript" alt="javascript" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/figma/figma-original.svg" title="figma" alt="figma" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" title="vs-code" alt="vs-code" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="git" alt="git" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="npm" alt="npm" width="40" height="40"/>&nbsp
+</div>
 
 **Figma**
 
